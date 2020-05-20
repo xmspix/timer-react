@@ -38,7 +38,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./build"),
-    publicPath: "/",
+    publicPath: "./",
     filename: "index.js",
   },
   module: {
@@ -82,7 +82,8 @@ module.exports = {
     contentBase: "./public",
     historyApiFallback: true,
     stats: "errors-only",
-    host: "localhost",
+    // host: "localhost",
+    host: "0.0.0.0",
   },
   // performance: {
   //   maxEntrypointSize: 712000,

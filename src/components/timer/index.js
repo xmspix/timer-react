@@ -49,7 +49,7 @@ const Timer = () => {
   }, [counter]);
 
   return (
-    <div>
+    <div className="controls">
       <Buttons state={setCounter} />
       <div id="timer">00:00:00</div>
     </div>

@@ -5,7 +5,6 @@ const App = () => {
   return (
     <main className="light">
       <Timer />
-      {/* <FlipDown /> */}
     </main>
   );
 };

@@ -49,6 +49,7 @@ const Buttons = ({ state }) => {
         />
         <input
           type="button"
+          className="btn white"
           value="Set Timer"
           onClick={() =>
             setTimer({
@@ -61,19 +62,27 @@ const Buttons = ({ state }) => {
         <input
           type="button"
           value="Clear"
-          onClick={() => setTimer({ ss: 0 })}
+          className="btn white"
+          onClick={() => {
+            setTimer({ ss: 0 });
+            hoursInput.current.value = "";
+            minutesInput.current.value = "";
+            secondsInput.current.value = "";
+          }}
         />
       </div>
 
-      <div className="buttons">
+      <div className="presets">
         <input
           type="button"
           value="20 min"
+          className="btn dark"
           onClick={() => setTimer({ mm: 20 })}
         />
         <input
           type="button"
           value="45 min"
+          className="btn dark"
           onClick={() => setTimer({ mm: 45 })}
         />
       </div>
