@@ -1,12 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
+import Context from "../../store/context";
 
-const Buttons = ({ state }) => {
+const Buttons = () => {
+  const globalState = useContext(Context);
+
   const hoursInput = useRef("hours");
   const minutesInput = useRef("minutes");
   const secondsInput = useRef("seconds");
 
   const setTimer = ({ hh, mm, ss }) => {
-    state(
+    globalState.setCounter(
       new Date().setHours(
         new Date().getHours() + hh || new Date().getHours(),
         new Date().getMinutes() + mm || new Date().getMinutes(),
@@ -64,7 +67,8 @@ const Buttons = ({ state }) => {
           value="Clear"
           className="btn white"
           onClick={() => {
-            setTimer({ ss: 0 });
+            // setTimer(false);
+            globalState.setCounter(false);
             hoursInput.current.value = "";
             minutesInput.current.value = "";
             secondsInput.current.value = "";

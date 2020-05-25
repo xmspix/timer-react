@@ -1,0 +1,71 @@
+@keyframes bgcolor {
+  0% {
+    background-color: #45a3e5;
+  }
+
+  25% {
+    background-color: #66bf39;
+  }
+
+  50% {
+    background-color: #eb670f;
+  }
+
+  75% {
+    background-color: #f35;
+  }
+
+  100% {
+    background-color: #864cbf;
+  }
+}
+
+@keyframes move {
+  40% {
+    transform: translateY(var(--move));
+    text-shadow: var(--shadow-active);
+  }
+}
+
+@keyframes smoke {
+  45%,
+  55% {
+    filter: blur(var(--blur));
+  }
+  50%,
+  50.1% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(var(--move)) translateY(var(--move-y));
+  }
+  50.1% {
+    transform: translateX(calc(var(--move) * -1));
+  }
+}
+
+@keyframes drive {
+  40% {
+    opacity: 1;
+  }
+  55% {
+    transform: skewX(var(--skew)) translateX(var(--move));
+  }
+  56% {
+    transform: skewX(var(--skew-fast)) translateX(calc(var(--move) * -1));
+  }
+  55%,
+  56% {
+    opacity: 0;
+  }
+  75% {
+    transform: skewX(var(--skew));
+  }
+  85% {
+    transform: skewX(var(--skew-bounce));
+  }
+}

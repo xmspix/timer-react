@@ -1,18 +1,4 @@
 .btn {
-  &.dark {
-    --background: #2f3545;
-    --shadow: 0 2px 8px -1px #{rgba(#151924, 0.32)};
-    --shadow-hover: 0 4px 20px -2px #{rgba(#151924, 0.5)};
-  }
-  &.white {
-    --background: #fff;
-    --text: #275efe;
-    --shadow: 0 2px 8px -1px #{rgba(#121621, 0.04)};
-    --shadow-hover: 0 4px 20px -2px #{rgba(#121621, 0.12)};
-  }
-}
-
-.btn {
   width: fit-content;
   --background: #275efe;
   --text: #fff;
@@ -40,6 +26,19 @@
   transition: transform var(--duration) ease, box-shadow var(--duration) ease;
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
+
+  &.dark {
+    --background: #2f3545;
+    --shadow: 0 2px 8px -1px #{rgba(#151924, 0.32)};
+    --shadow-hover: 0 4px 20px -2px #{rgba(#151924, 0.5)};
+  }
+  &.white {
+    --background: #fff;
+    --text: #275efe;
+    --shadow: 0 2px 8px -1px #{rgba(#121621, 0.04)};
+    --shadow-hover: 0 4px 20px -2px #{rgba(#121621, 0.12)};
+  }
+
   div {
     display: flex;
     span {
@@ -86,103 +85,6 @@
         transform-origin: 50% 100%;
         animation: drive var(--duration) linear var(--d);
       }
-    }
-  }
-}
-
-@keyframes move {
-  40% {
-    transform: translateY(var(--move));
-    text-shadow: var(--shadow-active);
-  }
-}
-
-@keyframes smoke {
-  45%,
-  55% {
-    filter: blur(var(--blur));
-  }
-  50%,
-  50.1% {
-    opacity: 0;
-  }
-  25%,
-  75% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(var(--move)) translateY(var(--move-y));
-  }
-  50.1% {
-    transform: translateX(calc(var(--move) * -1));
-  }
-}
-
-@keyframes drive {
-  40% {
-    opacity: 1;
-  }
-  55% {
-    transform: skewX(var(--skew)) translateX(var(--move));
-  }
-  56% {
-    transform: skewX(var(--skew-fast)) translateX(calc(var(--move) * -1));
-  }
-  55%,
-  56% {
-    opacity: 0;
-  }
-  75% {
-    transform: skewX(var(--skew));
-  }
-  85% {
-    transform: skewX(var(--skew-bounce));
-  }
-}
-
-html {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
-
-* {
-  box-sizing: inherit;
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
-}
-
-// Center & dribbble
-body {
-  min-height: 100vh;
-  display: flex;
-  font-family: "Roboto", Arial;
-  justify-content: center;
-  align-items: center;
-  background: #eceffc;
-  .button {
-    margin: 0 12px;
-  }
-  .dribbble {
-    position: fixed;
-    display: block;
-    right: 20px;
-    bottom: 20px;
-    img {
-      display: block;
-      height: 28px;
-    }
-  }
-  .twitter {
-    position: fixed;
-    display: block;
-    right: 64px;
-    bottom: 14px;
-    svg {
-      width: 32px;
-      height: 32px;
-      fill: #1da1f2;
     }
   }
 }
