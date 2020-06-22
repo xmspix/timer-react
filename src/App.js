@@ -36,12 +36,14 @@ const App = () => {
 
   return (
     <Context.Provider value={{ counter, setCounter }}>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Switch>
           <Route path="/" component={Home} exact />
         </Switch>
         <Footer />
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <Home />
+      <Footer />
     </Context.Provider>
   );
 };

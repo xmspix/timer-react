@@ -11,8 +11,8 @@ const Timer = () => {
     isAlarm: false,
   });
 
-  const alarm = new Audio("/alarm.mp3");
-  const timeRuningOut = new Audio("/tick.mp3");
+  const alarm = new Audio("./alarm.mp3");
+  const timeRuningOut = new Audio("./tick.mp3");
 
   useEffect(() => {
     const countDown = new Date(globalState.counter).getTime();
